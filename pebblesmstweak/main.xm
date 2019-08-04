@@ -8,7 +8,7 @@
 #import <AppSupport/CPDistributedMessagingCenter.h>
 #import <UIKit/UIApplication.h>
 #import <substrate.h>
-#import "rocketbootstrap.h"
+#import <rocketbootstrap/rocketbootstrap.h>
 
 // My headers
 
@@ -416,7 +416,7 @@ static long long currentNumber = HAS_ACTIONS_IDENTIFIER + 2;
 
         if ([h phoneNumberRef] != NULL)
 		{
-            NSString *p = [NSMutableString stringWithString:[[h phoneNumberRef] description]];
+            NSString *p = [NSMutableString stringWithString:[(id)[h phoneNumberRef] description]];
             NSString *phone = [@"+" stringByAppendingString:[[p componentsSeparatedByCharactersInSet: [[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""]];
 
             if ([phone isEqualToString:number])
@@ -532,7 +532,7 @@ static long long currentNumber = HAS_ACTIONS_IDENTIFIER + 2;
 
         if ([h phoneNumberRef] != NULL)
 		{
-            NSString *p = [NSMutableString stringWithString:[[h phoneNumberRef] description]];
+            NSString *p = [NSMutableString stringWithString:[(id)[h phoneNumberRef] description]];
             NSString *phone = [@"+" stringByAppendingString:[[p componentsSeparatedByCharactersInSet: [[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""]];
 
             if ([phone isEqualToString:number])
@@ -614,7 +614,7 @@ static long long currentNumber = HAS_ACTIONS_IDENTIFIER + 2;
         if ([handles count] == 1)
 		{
             IMHandle *handle = (IMHandle *)[handles objectAtIndex:0];
-            id p = [handle phoneNumberRef];
+            id p = (id)[handle phoneNumberRef];
             if (p)
 			{
                 NSString *phone = [NSString stringWithString:(NSString *)[p description]];

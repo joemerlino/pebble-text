@@ -1,9 +1,10 @@
 
 ARCHS := armv7 armv7s arm64
-TARGET := iphone:clang
-TARGET_SDK_VERSION := 9.2
-TARGET_IPHONEOS_DEPLOYMENT_VERSION := 8.0
-ADDITIONAL_OBJCFLAGS = -fobjc-arc
+#TARGET := iphone:clang
+#TARGET_SDK_VERSION := 9.2
+#TARGET_IPHONEOS_DEPLOYMENT_VERSION := 8.0
+#ADDITIONAL_CFLAGS += -I$(THEOS)/include/PrivateFrameworks
+#ADDITIONAL_OBJCFLAGS = -fobjc-arc
 
 include $(THEOS)/makefiles/common.mk
 
